@@ -1292,15 +1292,15 @@ excelTabel.save(filePath + fileName)
 #
 # 自动发送邮件
 sender = 'onlineeval_inspur@163.com'
-receiver = 'fangyunde@inspur.com'  # 接收邮箱
+receiver = '2681666570@qq.com'  # 接收邮箱
 # 创建一个带附件的实例
 message = MIMEMultipart()
 message['From'] = "Harland<onlineeval_inspur@163.com>"
-message['To'] = "<fangyunde@inspur.com>"
-message['Subject'] = Header(time.strftime("%Y-%m-%d", time.localtime()) + '竞品资讯', 'utf-8')
+message['To'] = "<2681666570@qq.com>"
+message['Subject'] = Header(time.strftime("%Y-%m-%d", time.localtime()) + '竞品及院校资讯', 'utf-8')
 
 # 邮件正文内容
-message.attach(MIMEText(time.strftime("%Y-%m-%d", time.localtime()) + '竞品资讯', 'plain', 'utf-8'))
+message.attach(MIMEText(time.strftime("%Y-%m-%d", time.localtime()) + '竞品及院校资讯', 'plain', 'utf-8'))
 
 # 构造附件1，传送当前目录下的 test.txt 文件
 att1 = MIMEApplication(open(filePath + fileName, 'rb').read())
