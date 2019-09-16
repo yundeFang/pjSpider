@@ -1292,11 +1292,15 @@ excelTabel.save(filePath + fileName)
 #
 # 自动发送邮件
 sender = 'onlineeval_inspur@163.com'
-receiver = '2681666570@qq.com'  # 接收邮箱
+to_reciver = ['2681666570@qq.com']
+cc_reciver = ['onlineeval_inspur@163.com']
+reciver = to_reciver + cc_reciver
+#receiver = '2681666570@qq.com'  # 接收邮箱
 # 创建一个带附件的实例
 message = MIMEMultipart()
 message['From'] = "Harland<onlineeval_inspur@163.com>"
-message['To'] = "<2681666570@qq.com>"
+message['To'] = ";".join(to_reciver)
+message['Cc'] = ";".join(cc_reciver)
 message['Subject'] = Header(time.strftime("%Y-%m-%d", time.localtime()) + '竞品及院校资讯', 'utf-8')
 
 # 邮件正文内容
@@ -1312,7 +1316,7 @@ message.attach(att1)
 smtpObj = smtplib.SMTP()
 smtpObj.connect("smtp.163.com", 25)
 smtpObj.login(sender, "masterkey1107")
-smtpObj.sendmail(sender, receiver, message.as_string())
+smtpObj.sendmail(sender, reciver, message.as_string())
 print("邮件发送成功")
 smtpObj.quit()
 
