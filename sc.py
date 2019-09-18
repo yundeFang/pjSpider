@@ -1455,7 +1455,7 @@ excelTabel.save(filePath + fileName)
 #
 # 自动发送邮件
 sender = 'onlineeval_inspur@163.com'
-to_reciver = ['870392099@qq.com']
+to_reciver = ['2681666570@qq.com']
 cc_reciver = ['onlineeval_inspur@163.com']
 reciver = to_reciver + cc_reciver
 # 创建一个带附件的实例
